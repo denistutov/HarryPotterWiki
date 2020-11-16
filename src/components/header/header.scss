@@ -1,0 +1,63 @@
+.page-header {
+  display: flex;
+  justify-content: center;
+}
+
+.page-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 35px 0 0 0;
+}
+
+.page-header__nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 620px;
+}
+
+.page-nav__list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  .page-nav__item {
+    margin-right: 32px;
+    list-style: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .page-nav__link {
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: #ffc500;
+    }
+  }
+}
+
+.page-header__ham {
+  width: 45px;
+  height: 40px;
+
+  border: none;
+  background: url('../_assets/ic-ham.png') no-repeat center center;
+
+  font-size: 0;
+  cursor: pointer;
+}
+
+.page-header__line {
+  max-width: 200px;
+}
+
+.page-header__line--small {
+  max-width: 80px;
+}

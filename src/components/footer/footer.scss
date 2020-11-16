@@ -1,0 +1,21 @@
+.page-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.page-footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 34px;
+}
+
+.copywrite {
+  color: #fff;
+  position: relative;
+}
+
+.page-footer__line {
+  max-width: 825px;
+}
