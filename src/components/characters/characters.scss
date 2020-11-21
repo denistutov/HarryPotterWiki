@@ -27,6 +27,9 @@
     object-fit: cover;
     width: 95px;
     height: 130px;
+    opacity: 0.7;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
   }
 
   span {
@@ -36,9 +39,23 @@
     font-size: 10px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 100%);
     width: 100%;
-    height: 11%;
+    height: 15%;
     padding: 5px 0 5px 0;
     text-align: center;
+  }
+}
+
+.characters__item--active {
+  border: 1px solid #ffc500;
+
+  span {
+    color: #ffc500;
+  }
+
+  img {
+    opacity: 1;
+    -webkit-filter: none;
+    filter: none;
   }
 }
 

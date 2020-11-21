@@ -11,6 +11,7 @@ const Characters = () => {
 
     const [charactersList, setCharactersList] = React.useState([]);
     const [currentPerson, setCurrentPerson] = React.useState();
+    const [characterActiveItem, setCharacterActiveItem] = React.useState(null);
 
     React.useEffect(() => {
         hpData.getAllCharacters()
@@ -20,10 +21,15 @@ const Characters = () => {
     return (
         <section className="characters page-container">
             <ul className="characters__list">
-                {charactersList.map( character => {
+                {charactersList.map( (character, index) => {
                     return (
-                        <li key={character.name} className="characters__item" 
-                            onClick={() => setCurrentPerson(character)}>
+                        <li key={`${character.name}_${index}`} 
+                            className={characterActiveItem !== index ? 
+                                "characters__item" : "characters__item characters__item--active"} 
+                            onClick={() => {
+                                setCurrentPerson(character);
+                                setCharacterActiveItem(index);
+                            }}>
                             <img src={character.image}  alt={character.name} />
                             <span>{character.name} </span>
                         </li>

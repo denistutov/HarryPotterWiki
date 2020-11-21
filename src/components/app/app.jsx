@@ -11,7 +11,7 @@ import './app.scss';
 function App() {
     return (
         <div className="container">
-            <Header />
+            <Header items={['Characters', 'Faculties', 'Spells', 'Books']} />
             <main className="page-main">
                 <Switch>
                     <Route exact path='/' component={Main} />
