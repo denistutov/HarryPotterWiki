@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import logoPng from '../_assets/hp-logo.png';
 import './header.scss';
 
-const Header = ({items}) => {
+const Header = ({ items, setBackground }) => {
 
     const [activeMenuItem, setActiveMenuItem] = React.useState(null);
     
@@ -14,7 +14,10 @@ const Header = ({items}) => {
                 <Link 
                     className={activeMenuItem !== index ? "page-nav__link" : "page-nav__link page-nav__link--active"}
                     to={`/${item}`} 
-                    onClick={() => setActiveMenuItem(index)}>
+                    onClick={() => {
+                        setActiveMenuItem(index);
+                        setBackground(item);
+                    }}>
                         {item}
                 </Link>
             </li>
@@ -25,7 +28,10 @@ const Header = ({items}) => {
         <header className="page-header">
             <div className="page-header__container page-container">
                 <div className="page-header__logo main-logo">
-                    <Link className="main-logo__link" to="/" onClick={() => setActiveMenuItem(null)}>
+                    <Link className="main-logo__link" to="/" onClick={() => {
+                        setActiveMenuItem(null);
+                        setBackground(null);
+                    }}>
                         <img src={logoPng} alt="Harry Potter logo"/>
                     </Link>
                 </div>

@@ -1,7 +1,7 @@
 export default class HpService {
     _apiBase = 'http://hp-api.herokuapp.com/api/';
 
-    async getResource(url) {
+    getResource = async (url) => {
         const res = await fetch(`${this._apiBase}${url}`);
 
         if (!res.ok) {
@@ -11,9 +11,9 @@ export default class HpService {
         return await res.json();
       }
 
-    async getAllCharacters() {
+    getAllCharacters = async () => {
         const res = await this.getResource('characters');
-        return res.map(this._transformPerson);
+        return res.map(this._transformPerson); 
     }
 
     _transformPerson(person) {
